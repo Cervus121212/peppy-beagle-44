@@ -15,6 +15,8 @@ LINE = "You said 'the dog ate my homework' was the oldest excuse in the book, so
 
 
 def main():
+    if len(LINE) > 200:
+        raise ValueError("entry line exceeds 200 characters")
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
